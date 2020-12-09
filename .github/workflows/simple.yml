@@ -7,7 +7,6 @@ on:
 env: 
   CLIENT = ${{ github.event.client_payload.client }}
   ENV = ${{ github.event.client_payload.env }}
-  STYLES = ${{ github.event.client_payload.styles }}
     
 jobs:
   run-shell-command:
@@ -17,5 +16,3 @@ jobs:
         run: echo $CLIENT
       - name: echo environment
         run: echo $ENV
-      - name: echo styles
-        run: echo $STYLES
