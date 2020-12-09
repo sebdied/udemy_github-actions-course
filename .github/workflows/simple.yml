@@ -4,11 +4,18 @@ on:
   repository_dispatch:
     types: [test-workflow]
     
+env: 
+  CLIENT = ${{ github.event.client_payload.client }}
+  ENV = ${{ github.event.client_payload.env }}
+  STYLES = ${{ github.event.client_payload.styles }}
+    
 jobs:
   run-shell-command:
     runs-on: ubuntu-latest
     steps: 
-      - name: echo a string
-        run: echo "Hello World"
-      - name: echo key from payload
-        run: echo ${{ github.event.client_payload.example-key }}
+      - name: echo client
+        run: echo $CLIENT
+      - name: echo environment
+        run: echo $ENV
+      - name: echo styles
+        run: echo $STYLES
