@@ -13,6 +13,6 @@ jobs:
         env: 
           CLIENT: ${{ github.event.client_payload.client }}
           ENV: ${{ github.event.client_payload.env }}
-          STYLES: ${{ github.event.client_payload.env }}
+          STYLES: ${{ github.event.client_payload.styles }}
       - name: echo python version
-        run: echo python --version
+        run: python --version
