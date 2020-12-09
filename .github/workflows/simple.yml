@@ -1,14 +1,14 @@
 name: Shell Commands 
 
-on: [push]
-
+on: 
+  repository_dispatch:
+    types: [test-workflow]
+    
 jobs:
   run-shell-command:
     runs-on: ubuntu-latest
     steps: 
       - name: echo a string
         run: echo "Hello World"
-      - name: multiline script 
-        run: |
-           node -v 
-           npm -v
+      - name: echo key from payload
+        run: echo ${{ github.event.client_payload.example-key }}
