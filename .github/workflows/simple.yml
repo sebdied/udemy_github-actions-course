@@ -2,17 +2,14 @@ name: Shell Commands
 
 on: 
   repository_dispatch:
-    types: [test-workflow]
-    
-env: 
-  CLIENT = ${{ github.event.client_payload.client }}
-  ENV = ${{ github.event.client_payload.env }}
+    types: [test-python-workflow]
     
 jobs:
-  run-shell-command:
+  run-python-script:
     runs-on: ubuntu-latest
     steps: 
-      - name: echo client
-        run: echo $CLIENT
-      - name: echo environment
-        run: echo $ENV
+      - name: echo parameters
+        run: echo Client $CLIENT for Environment $ENV was chosen!
+        env: 
+          CLIENT = ${{ github.event.client_payload.client }}
+          ENV = ${{ github.event.client_payload.env }}
