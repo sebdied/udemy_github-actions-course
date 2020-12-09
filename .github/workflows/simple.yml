@@ -1,4 +1,4 @@
-name: Shell Commands 
+name: Inf-Performance-Check 
 
 on: 
   repository_dispatch:
@@ -11,5 +11,5 @@ jobs:
       - name: echo parameters
         run: echo Client $CLIENT for Environment $ENV was chosen!
         env: 
-          CLIENT = ${{ github.event.client_payload.client }}
-          ENV = ${{ github.event.client_payload.env }}
+          CLIENT: ${{ github.event.client_payload.client }}
+          ENV: ${{ github.event.client_payload.env }}
