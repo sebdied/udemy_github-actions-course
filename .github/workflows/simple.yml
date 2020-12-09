@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
       - name: echo parameters
-        run: echo Client $CLIENT for Environment $ENV was chosen (Styles - $STYLES)!
+        run: echo Client $CLIENT for Environment $ENV was chosen, Styles $STYLES"
         env: 
           CLIENT: ${{ github.event.client_payload.client }}
           ENV: ${{ github.event.client_payload.env }}
