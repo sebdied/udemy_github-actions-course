@@ -17,7 +17,7 @@ jobs:
       - name: execute py script
         run: |
           pip install argparse
-          python test.py -u CLIENT -e ENV -m STYLES
+          python test.py -u $CLIENT -e $ENV -m $STYLES
         env: 
           CLIENT: ${{ github.event.client_payload.client }}
           ENV: ${{ github.event.client_payload.env }}
