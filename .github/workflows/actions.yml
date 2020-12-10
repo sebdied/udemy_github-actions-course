@@ -7,11 +7,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Simple JS-Action
+        # Set id to reference later to this step (steps.greet ...)
         id: greet
         # Reference to an Action (published on Github) and the wanted version or commit
         uses: actions/hello-world-javascript-action@v1
         with:
-          # Input parameter
+          # Input-parameter (defined by Action)
           who-to-greet: John
       - name: Log Greeting Time
-        run: echo "${{ steps.greet.outputs.time }}" # Uses variable steps, action has output-parameter: "time"
+        run: echo "${{ steps.greet.outputs.time }}" # Uses variable steps, Action has Output-parameter: "time"
