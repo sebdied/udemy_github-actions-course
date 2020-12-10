@@ -14,4 +14,4 @@ jobs:
           # Input parameter
           who-to-greet: John
       - name: Log Greeting Time
-        run: echo "${{ steps.greet.outputs.time }}" # Uses variable steps, action has output-variable: "time"
+        run: echo "${{ steps.greet.outputs.time }}" # Uses variable steps, action has output-parameter: "time"
